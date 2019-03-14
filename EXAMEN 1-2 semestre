@@ -1,0 +1,263 @@
+// Primer examen parcial
+/*Alan Emiliano Cadena Ramirez  870024286
+Gerardo Ariel Gonzalez Chavez 870156966
+*/
+
+var imgFondo;
+var F;
+var imgBull;
+var B;
+var imgChar;
+var C;
+var imgPikachu;
+var P;
+var imgJiggly;
+var J;
+var imgEeve;
+var E;
+function preload(){
+imgFondo = loadImage('fondo.jpg');
+ imgBull = loadImage('bullbasaur.png');
+imgChar = loadImage('charmander.png');
+  imgPikachu = loadImage('pikachu.png');
+  imgJiggly = loadImage('jigglypuff.png');
+imgEeve =  loadImage('eevee.png');
+}
+
+function setup() {
+  createCanvas(400, 400);
+   F = new fondo();
+ B = new bull();
+  C = new Char();
+   P = new Pika();
+  J = new jiggly();
+  E = new eeve();
+}
+
+function draw() {
+  background(220);
+    F.mostrar();
+   B.mostrar();
+   C.mostrar();
+   P.mostrar();
+  J.mostrar();
+  E.mostrar();
+  B.mover();
+  if (B.salir()) {
+			B.retornar();
+		}
+  C.mover();
+  if (C.salir()) {
+			C.retornar();
+		}
+  P.mover();
+   if (P.salir()) {
+			P.retornar();
+		}
+  J.mover();
+  if (J.salir()) {
+			J.retornar();
+		}
+  E.mover();
+  if (J.salir()) {
+			J.retornar();
+		}
+  
+  
+}
+
+
+
+
+// index//
+ <script src="fondo.js"></script>
+    <script src="bull.js"></script>
+    <script src="char.js"></script>
+      <script src="pika.js"></script>
+     <script src="jiggly.js"></script>
+     <script src="eeve.js"></script>
+     
+     
+     //CLASES//
+    
+    class fondo {
+  constructor() {
+    this.x = width / 2;
+    this.y= height / 2
+    this.velx=8
+  }
+  mostrar() {
+    imageMode(CENTER);
+    image(imgFondo, this.x, this.y, 400, 400)
+  }
+}
+
+
+
+class bull {
+  constructor() {
+    this.x = width / 2;
+    this.y= height / 2
+    this.velx=8
+
+
+  }
+
+  mostrar() {
+    imageMode(CENTER);
+    image(imgBull, this.x, this.y, 50, 50)
+  }
+mover(){
+this.x= this.x + this.velx;
+}
+
+  salir() {
+		var res;
+		if (this.x > width) {
+			res = true;
+		} else {
+			res = false;
+		}
+		return res;
+	}
+	retornar() {
+		this.x = -this.x
+	}
+
+}
+
+class Char {
+  constructor() {
+    this.x = width / 2;
+    this.y= height / 2
+    this.velx=8
+
+
+  }
+
+  mostrar() {
+    imageMode(CENTER);
+    image(imgChar, this.x, this.y, 50, 50)
+  }
+  mover(){
+this.x= this.x + 1
+}
+
+  salir() {
+		var res;
+		if (this.x > width) {
+			res = true;
+		} else {
+			res = false;
+		}
+		return res;
+	}
+	retornar() {
+		this.x = -this.x
+	}
+}
+
+
+
+class Pika {
+  constructor() {
+    this.x = width / 2;
+    this.y= height / 2
+    this.velx=8
+
+
+  }
+
+  mostrar() {
+    imageMode(CENTER);
+    image(imgPikachu, this.x, this.y, 50, 50)
+  }
+   mover(){
+this.x= this.x + 2
+}
+
+  salir() {
+		var res;
+		if (this.x > width) {
+			res = true;
+		} else {
+			res = false;
+		}
+		return res;
+	}
+	retornar() {
+		this.x = -this.x
+	}
+}
+
+
+
+
+class jiggly {
+  constructor() {
+    this.x = width / 2;
+    this.y= height / 2
+    this.velx=8
+
+
+  }
+
+  mostrar() {
+    imageMode(CENTER);
+    image(imgJiggly, this.x, this.y, 50, 50)
+  }
+   mover(){
+this.x= this.x + 4
+}
+
+  salir() {
+		var res;
+		if (this.x > width) {
+			res = true;
+		} else {
+			res = false;
+		}
+		return res;
+	}
+	retornar() {
+		this.x = -this.x
+	}
+}
+
+
+
+
+class eeve {
+  constructor() {
+    this.x = width / 2;
+    this.y= height / 2
+    this.velx=8
+
+
+  }
+
+  mostrar() {
+    imageMode(CENTER);
+    image(imgEeve, this.x, this.y, 50, 50)
+  }
+  mover(){
+this.x= this.x + 6
+}
+
+  salir() {
+		var res;
+		if (this.x > width) {
+			res = true;
+		} else {
+			res = false;
+		}
+		return res;
+	}
+	retornar() {
+		this.x = -this.x
+	}
+}
+
+
+
+// link https://editor.p5js.org/AlanCAD/sketches/w_b1ro1U- //
